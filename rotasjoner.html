@@ -17,13 +17,16 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #0a0a0a;
             min-height: 100vh;
         }
 
         h1 {
             margin-bottom: 20px;
-            color: #333;
+            color: white;
+            font-size: 36px;
+            font-weight: 300;
+            letter-spacing: 2px;
         }
 
         /* Setup Modal */
@@ -33,7 +36,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.95);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -45,17 +48,18 @@
         }
 
         .setup-container {
-            background: white;
+            background: #1a1a1a;
             border-radius: 20px;
             padding: 40px;
             max-width: 600px;
             width: 90%;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(255, 255, 255, 0.1);
+            border: 1px solid #333;
         }
 
         .setup-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: white;
+            color: black;
             padding: 20px;
             border-radius: 12px;
             text-align: center;
@@ -65,6 +69,8 @@
         .setup-header h2 {
             font-size: 32px;
             margin: 0;
+            font-weight: 300;
+            letter-spacing: 2px;
         }
 
         .serving-team {
@@ -74,40 +80,44 @@
             gap: 15px;
             margin-bottom: 30px;
             padding: 15px;
-            background: #f8f9fa;
+            background: #252525;
             border-radius: 10px;
+            border: 1px solid #333;
         }
 
         .serving-team label {
             font-size: 18px;
-            font-weight: 500;
-            color: #333;
+            font-weight: 400;
+            color: #e0e0e0;
         }
 
         .toggle-switch {
             position: relative;
             width: 80px;
             height: 40px;
-            background: #ddd;
+            background: #333;
             border-radius: 25px;
             cursor: pointer;
             transition: background 0.3s;
+            border: 2px solid #444;
         }
 
         .toggle-switch.active-a {
-            background: #134f2a;
+            background: #1a1a1a;
+            border-color: white;
         }
 
         .toggle-switch.active-b {
-            background: #1e5a96;
+            background: #1a1a1a;
+            border-color: white;
         }
 
         .toggle-slider {
             position: absolute;
             top: 4px;
             left: 4px;
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             background: white;
             border-radius: 50%;
             transition: transform 0.3s;
@@ -115,7 +125,7 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            color: #333;
+            color: black;
             font-size: 14px;
         }
 
@@ -130,74 +140,79 @@
         .table-header {
             font-size: 16px;
             font-weight: 600;
-            color: #333;
+            color: #e0e0e0;
             margin-bottom: 15px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            background: white;
+            background: #1a1a1a;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+            border: 1px solid #333;
         }
 
         th, td {
             padding: 15px;
             text-align: left;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #333;
         }
 
         th {
-            background: #f8f9fa;
+            background: #252525;
             font-weight: 600;
-            color: #555;
+            color: #aaa;
         }
 
         td {
-            background: white;
+            background: #1a1a1a;
+            color: #e0e0e0;
         }
 
         input[type="text"] {
             width: 100%;
             padding: 8px 12px;
-            border: 2px solid #e0e0e0;
+            border: 2px solid #333;
             border-radius: 6px;
             font-size: 14px;
             transition: border-color 0.3s;
+            background: #0a0a0a;
+            color: white;
         }
 
         input[type="text"]:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: white;
         }
 
         .team-label {
             font-weight: 600;
-            color: #134f2a;
+            color: #e0e0e0;
         }
 
         .team-label.team-b {
-            color: #1e5a96;
+            color: #e0e0e0;
         }
 
         .start-button {
             width: 100%;
             padding: 18px;
             font-size: 18px;
-            font-weight: bold;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            font-weight: 600;
+            background: white;
+            color: black;
             border: none;
             border-radius: 12px;
             cursor: pointer;
             transition: transform 0.2s, box-shadow 0.2s;
+            letter-spacing: 1px;
         }
 
         .start-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
         }
 
         .start-button:active {
@@ -223,6 +238,7 @@
         canvas {
             border: 2px solid #333;
             display: block;
+            background: #1a1a1a;
         }
 
         .controls {
@@ -239,33 +255,55 @@
 
         .team-controls h3 {
             text-align: center;
-            color: #333;
+            color: white;
+            font-weight: 400;
         }
 
         button {
             padding: 10px 20px;
             font-size: 14px;
             cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #2196F3;
+            border: 2px solid white;
+            border-radius: 8px;
+            background-color: transparent;
             color: white;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            font-weight: 500;
         }
 
         button:hover {
-            background-color: #0b7dda;
+            background-color: white;
+            color: black;
         }
 
         .rotate-both {
             padding: 15px 30px;
             font-size: 16px;
-            font-weight: bold;
-            background-color: #4C57AF;
+            font-weight: 600;
+            background-color: white;
+            color: black;
+            border: 2px solid white;
         }
 
         .rotate-both:hover {
-            background-color: #3a4589;
+            background-color: transparent;
+            color: white;
+        }
+
+        .reset-button {
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-size: 14px;
+            font-weight: 500;
+            background-color: transparent;
+            color: #999;
+            border: 2px solid #444;
+        }
+
+        .reset-button:hover {
+            background-color: #1a1a1a;
+            color: white;
+            border-color: #666;
         }
     </style>
 </head>
@@ -356,6 +394,8 @@
         </div>
 
         <button class="rotate-both" onclick="rotateBothTeams()">Rotate Both Teams</button>
+        
+        <button class="reset-button" onclick="resetToSetup()">← Back to Setup</button>
     </div>
 
     <script>
@@ -401,6 +441,19 @@
             drawCourt();
         }
 
+        // Reset to setup screen
+        function resetToSetup() {
+            // Update input fields with current player names
+            for (let i = 1; i <= 6; i++) {
+                document.getElementById(`teamA-${i}`).value = teamA[i-1];
+                document.getElementById(`teamB-${i}`).value = teamB[i-1];
+            }
+
+            // Show setup modal and hide app
+            document.getElementById('setup-modal').classList.remove('hidden');
+            document.getElementById('app-container').classList.remove('visible');
+        }
+
         function rotateTeam(team) {
             const arr = team === 'A' ? teamA : teamB;
             const temp = [...arr];
@@ -438,7 +491,7 @@
 
         function drawCourt() {
             // Clear canvas
-            ctx.fillStyle = '#4887c6';
+            ctx.fillStyle = '#0a0a0a';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             // Court dimensions
@@ -449,7 +502,7 @@
             const halfWidth = courtWidth / 2;
 
             // Draw full court
-            ctx.fillStyle = '#d26337';
+            ctx.fillStyle = '#2a2a2a';
             ctx.fillRect(marginX, marginY, courtWidth, courtHeight);
             ctx.strokeStyle = 'white';
             ctx.lineWidth = 4;
@@ -484,12 +537,12 @@
             const netTop = marginY - netHeight;
 
             // Net poles and bases
-            ctx.fillStyle = '#2d2d2d';
+            ctx.fillStyle = '#666';
             ctx.fillRect(netX - 4, netTop, 8, netHeight);
             ctx.fillRect(netX - 4, marginY + courtHeight, 8, netHeight);
 
-            ctx.fillStyle = '#4a4a4a';
-            ctx.strokeStyle = 'black';
+            ctx.fillStyle = '#888';
+            ctx.strokeStyle = 'white';
             ctx.lineWidth = 1;
             
             ctx.beginPath();
@@ -503,7 +556,7 @@
             ctx.stroke();
 
             // Net mesh
-            ctx.strokeStyle = '#1a1a1a';
+            ctx.strokeStyle = '#444';
             ctx.lineWidth = 1;
             for (let i = netTop; i < marginY + courtHeight; i += 10) {
                 ctx.beginPath();
@@ -530,7 +583,7 @@
                 [startX + zoneWidth * 1.5, startY + zoneHeight * 2.5]
             ];
 
-            const color = leftSide ? '#134f2a' : '#1e5a96';
+            const color = leftSide ? '#1a1a1a' : '#1a1a1a';
 
             // Draw players
             for (let i = 0; i < positions.length; i++) {
