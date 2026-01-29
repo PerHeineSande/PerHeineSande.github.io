@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Per Heine Sande | Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #4f7d8a;
+            --primary-light: #6a9caf;
+            --secondary: #f8fafc;
+            --accent: #2c4f59;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--secondary);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section with Profile Pic */
+        header {
+            background: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #f1f5f9;
+            box-shadow: var(--shadow);
+        }
+
+        .profile-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Organic modern shape */
+            box-shadow: 0 15px 35px rgba(79, 125, 138, 0.3);
+            border: 4px solid var(--white);
+            background: #e2e8f0; /* Fallback color */
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--primary);
+            font-size: 1.25rem;
+            font-weight: 500;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        /* About Section Improvements */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        /* Modern Skills Tags */
+        .skills-container {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .skills-container h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Project Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 1px solid #f1f5f9;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-light);
+        }
+
+        .project-card a.card-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .project-card a.card-link:hover {
+            color: inherit;
+        }
+
+        .project-card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-size: 1.4rem;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        footer {
+            background: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid #f1f5f9;
+            color: var(--text-light);
+        }
+
+        /* Social Icons */
+        .social-icons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary-light);
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover img {
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 850px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="profile-container">
+        <img src="images/profile-picture.jpg" alt="Per Heine Sande" class="profile-pic">
+    </div>
+    <h1>Per Heine Sande</h1>
+    <p>Informatikkstudent ved Universitetet i Oslo</p>
+    <div class="social-icons">
+        <a href="https://no.wikipedia.org/wiki/Per_Heine_Sande" target="_blank">
+            <img src="images/wikipedia-icon.png" alt="Wikipedia" />
+            <span>Wikipedia</span>
+        </a>
+        <a href="https://www.linkedin.com/in/per-heine-sande-24bb94302/" target="_blank">
+            <img src="images/linkedin-icon.png" alt="LinkedIn" />
+            <span>LinkedIn</span>
+        </a>
+        <a href="images/CV.pdf" download="Per-Heine-Sande-CV.pdf">
+            <img src="images/cv-icon.png" alt="CV" />
+            <span>CV</span>
+        </a>
+    </div>
+</header>
+
+<section id="om">
+    <h2>Om meg</h2>
+    <div class="about-grid">
+        <div class="about-content">
+            <p>
+                Jeg er informatikkstudent på tredje året ved UiO med bachelorretning innen
+                <strong>design og interaksjon</strong>. Jeg brenner for å skape gode brukeropplevelser støttet av solid teknisk arkitektur og fremstilt med godt design.
+            </p>
+            <p>
+                Som <strong>toppidrettsutøver</strong> tar jeg med meg en unik disiplin og evne til å hondtere press inn i hvert prosjekt. Jeg er vant til å sette høye mål og jobbe strukturert for å nå dem.
+            </p>
+            <p>
+                Jeg trives best i skjæringspunktet mellom koding og design, og ser alltid etter innovative løsninger på utfordringer.
+            </p>
+        </div>
+
+        <div class="skills-container">
+            <h3>Ferdigheter</h3>
+            <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Kotlin</span>
+                <span class="skill-tag">Swift</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">UX/UI Design</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Informasjonssikkerhet</span>
+                <span class="skill-tag">Algoritmer</span>
+                 <span class="skill-tag">AI</span>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="prosjekter">
+    <h2>Prosjekter</h2>
+    <div class="projects-grid">
+
+        <div class="project-card">
+            <a href="Delfi.html" target="_blank" class="card-link">
+                <h3>Delfi</h3>
+                <p>
+                    Design og utvikling av Delfi. Delfi er en applikasjon for idrettsutøvere som skal hjelpe dem med å hondtere det mentale aspektet av idretten og er utviklet i samarbeid med en medstudent. Trykk for å lese mer om prosjektet.
+                </p>
+            </a>
+        </div>
+
+        <div class="project-card">
+            <h3>Ekko</h3>
+            <p>
+                Ekko er et prosjekt jeg jobber med som skal være en lokal AI assistent bestående av flere AI modeller. Målet med Ekko er at ulike AI modeller skal kunne samarbeide for å gi best mulig respons til brukeren. Ekko er enda i tidlig fase, men jeg gleder meg til å dele mer om prosjektet etterhvert.
+            </p>
+        </div>
+
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Per Heine Sande</p>
+    <p style="font-size: 0.8rem; margin-top: 0.5rem;">Design, bruk og interaksjon · UiO</p>
+</footer>
+
+</body>
+</html>
